@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"log"
-	"net/http"
 	"os"
 	"sync"
 	"time"
@@ -45,8 +44,6 @@ func main() {
 			},
 		}
 	)
-
-	http.Handle("/", http.FileServer(http.Dir("./cmd/math/static")))
 
 	waitGroup.Add(1)
 	go httpServer.Start()
