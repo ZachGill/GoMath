@@ -1,0 +1,132 @@
+FORMAT: 1A
+
+# GoMath
+
+GoMath is an API which answers simple math problems
+
+# Group Endpoints
+
+## Add [/add{?input,input}]
++ Parameters
+    + input: 1 (required, number) - Input number to add
+    + input: 1 (required, number) - Input number to add
+
+### Add two input numbers [GET]
+
++ Response 200 (application/json)
+    + Headers
+        X-Transaction-ID: "Problem ID"
+    + Body
+        {
+            "problem_id": "bdmb8cboo3smi6jgiai0",
+            "operation": "addition",
+            "input_1": 1,
+            "input_2": 1,
+            "answer": 2
+        }
+## Subtract [/subtract{?input,input}]
++ Parameters
+    + input: 46 (required, number) - Input number to subtract from
+    + input: 45 (required, number) - Input number to subtract by
+
+### Subtract the second input number from the first [GET]
+
++ Response 200 (application/json)
+    + Headers
+        X-Transaction-ID: "Problem ID"
+    + Body
+        {
+            "problem_id": "bdmb8cboo3smi6jgiai1",
+            "operation": "subtraction",
+            "input_1": 46,
+            "input_2": 45,
+            "answer": 1
+        }
+
+## Multiply [/multiply{?input,input}]
++ Parameters
+    + input: 3 (required, number) - Input number to multiply
+    + input: 4 (required, number) - Input number to multiply
+
+### Multiply the first two input numbers together [GET]
+
++ Response 200 (application/json)
+    + Headers
+        X-Transaction-ID: "Problem ID"
+    + Body
+        {
+            "problem_id": "bdmb8cboo3smi6jgiai2",
+            "operation": "multiplication",
+            "input_1": 3,
+            "input_2": 4,
+            "answer": 12
+        }
+
+## Divide [/divide{?input,input}]
++ Parameters
+    + input: 12 (required, number) - Input number to divide
+    + input: 4 (required, number) - Input number to divide from
+
+### Divide the first input number by the second [GET]
+
++ Response 200 (application/json)
+    + Headers
+        X-Transaction-ID: "Problem ID"
+    + Body
+        {
+            "problem_id": "bdmb8cboo3smi6jgiai3",
+            "operation": "division",
+            "input_1": 12,
+            "input_2": 4,
+            "answer": 3
+        }
+
+## Problems [/problems]
+### List all problems [GET]
++ Response 200 (application/json)
+    {
+        "problems": [
+            {
+                "problem_id": "bdmb8cboo3smi6jgiai0",
+                "operation": "addition",
+                "input_1": 1,
+                "input_2": 1,
+                "answer": 2
+            },
+            {
+                "problem_id": "bdmb8cboo3smi6jgiai1",
+                "operation": "subtraction",
+                "input_1": 46,
+                "input_2": 45,
+                "answer": 1
+            },
+            {
+                "problem_id": "bdmb8cboo3smi6jgiai2",
+                "operation": "multiplication",
+                "input_1": 3,
+                "input_2": 4,
+                "answer": 12
+            },
+            {
+                "problem_id": "bdmb8cboo3smi6jgiai3",
+                "operation": "division",
+                "input_1": 12,
+                "input_2": 4,
+                "answer": 3
+            }
+        ]
+    }
+
+## Problem [/problems/{problem_id}]
++ Parameters
+    + problem_id: (required, string) - Problem ID given in the response header when sending a math problem
+
+### Retrieve result of a specific problem [GET]
++ Response 200 (application/json)
+    {
+        "problem_id": "bdmb8cboo3smi6jgiai0",
+        "operation": "addition",
+        "input_1": 1,
+        "input_2": 1,
+        "answer": 2
+    }
