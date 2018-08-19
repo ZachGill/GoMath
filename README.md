@@ -1,6 +1,6 @@
 # GoMath
 
-GoMath is a Web API for answering simple math problems.
+### GoMath is a Web API for answering simple math problems.
 
 It takes two input numbers (integer OR decimal) and performs one of the following operations on them:
 
@@ -8,5 +8,19 @@ It takes two input numbers (integer OR decimal) and performs one of the followin
 * Subtraction
 * Multiplication
 * Division
+
+### Running Locally:
+
+1. Navigate to the root folder of the repository
+2. Build the binary:
+```
+go build ./cmd/math/
+```
+3. Run the binary:
+```
+./math
+```
+
+The service will be accessible at `localhost:8080`
 
 See the API documentation (api.apib or the root web page of the service) for usage information
