@@ -12,11 +12,15 @@ It takes two input numbers (integer OR decimal) and performs one of the followin
 ### Running Locally:
 
 1. Navigate to the root folder of the repository
-2. Build the binary:
+2. Initialize submodules:
+```
+git submodule update --init
+```
+3. Build the binary:
 ```
 go build ./cmd/math/
 ```
-3. Run the binary:
+4. Run the binary:
 ```
 ./math
 ```
