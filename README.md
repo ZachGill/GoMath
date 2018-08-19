@@ -1,6 +1,6 @@
 # GoMath
 
-GoMath is a REST API for answering simple math problems.
+GoMath is a Web API for answering simple math problems.
 
 It takes two input numbers (integer OR decimal) and performs one of the following operations on them:
 

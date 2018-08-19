@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/ZachGill/transaction-mw"
+	middleware "github.com/ZachGill/transaction-mw"
 	"github.com/gorilla/mux"
 )
 

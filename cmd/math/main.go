@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ZachGill/math/cmd/math/handlers"
+	"github.com/ZachGill/GoMath/cmd/math/handlers"
 )
 
 func main() {

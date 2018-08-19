@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
+
+	middleware "github.com/ZachGill/transaction-mw"
 )
 
 // Add performs addition on two input floats and returns their sum
@@ -56,6 +58,7 @@ func (handler *Add) ServeHTTP(writer http.ResponseWriter, request *http.Request)
 	sum = input1 + input2
 
 	response = MathResponse{
+		ProblemID: request.Header.Get(middleware.Key),
 		Operation: "addition",
 		Input1:    input1,
 		Input2:    input2,
