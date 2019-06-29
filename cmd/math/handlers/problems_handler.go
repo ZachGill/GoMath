@@ -18,10 +18,7 @@ type ProblemsResponse struct {
 	Problems []MathResponse `json:"problems"`
 }
 
-// ServeHTTP receives a transaction ID, then uses it to call the Accessor Get
-// method, and returns via a JSON body the current status of a restart job
-// (apps completed, total apps, instances completed, total instances, percent
-// done for each, an error, and true/false for if the job is done).
+// ServeHTTP returns a list of all problems and their results
 func (handler *Problems) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
 	var (
 		httpStatusCode = http.StatusOK

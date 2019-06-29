@@ -10,6 +10,9 @@ import (
 	"github.com/ZachGill/GoMath/cmd/math/handlers"
 )
 
+// TODO:
+// Turn into CLI app
+
 func main() {
 	var (
 		problemsAccessor = &handlers.Accessor{
